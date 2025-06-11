@@ -1,1 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificación Profesional de Paneles Solares 2025 – Ing. Jorge Astuvilca</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
+    .circle {
+      width: 30px;
+      height: 30px;
+      border: 4px solid green;
+      border-top: 4px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 15px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .text {
+      font-size: 24px;
+      transition: opacity 0.4s ease-in-out;
+    }
+
+    #fallback {
+      display: none;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    #fallback a {
+      color: green;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="circle"></div>
+  <div id="message" class="text">¡Espere! Buscando el Mejor Descuento</div>
+
+  <iframe id="cookieFrame" src="" style="display: none;"></iframe>
+
+  <div id="fallback">
+    Si no eres redirigido, <a href="https://pay.hotmart.com/I82562726Y?off=vqpudl16&offDiscount=022249&checkoutMode=10">haz clic aquí</a>.
+  </div>
+
+  <script>
+    const cookieURL = "https://go.hotmart.com/P100226761T?dp=1";
+    const checkoutURL = "https://pay.hotmart.com/I82562726Y?off=vqpudl16&offDiscount=022249&checkoutMode=10";
+
+    const msg = document.getElementById("message");
+    const iframe = document.getElementById("cookieFrame");
+
+    setTimeout(() => {
+      msg.style.opacity = 0;
+      setTimeout(() => {
+        msg.textContent = "Redireccionando a Super Descuento";
+        msg.style.opacity = 1;
+      }, 400);
+    }, 3000);
+
+    iframe.src = cookieURL;
+
+    iframe.onload = () => {
+      setTimeout(() => {
+        window.location.href = checkoutURL;
+      }, 1000);
+    };
+
+    setTimeout(() => {
+      document.getElementById("fallback").style.display = "block";
+    }, 8000);
+  </script>
+
+</body>
+</html>
